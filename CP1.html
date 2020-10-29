@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>Lab 3 Vue Simple Data Table (static)</title>
+		<link rel = "stylesheet" href = "./style.css">
+	</head>
+	
+	<body>
+		<div id = "app">
+			<table>
+				<tr>
+					<th v-for="col in columns">{{col}}</th>
+				</tr>
+				<tr v-for="row in rows">
+					<td>{{row.id}}</td>
+					<td>{{row.name}}</td>
+					<td>{{row.phone}}</td>
+				</tr>
+			</table>
+		</div>
+
+		<script src = "http://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+		<script>
+			var app = new Vue({
+				el: '#app',
+				data: {
+					columns: {
+						id: 'ID',
+						name: 'Full Name',
+						phone: 'Phone',
+					},
+					rows: [
+						{ id: 1, name: "Test Name 1", phone: '305-917-1301' },
+						{ id: 2, name: "Test Name 2", phone: '210-684-8953' },
+						{ id: 3, name: "Test Name 3", phone: '765-338-0312' },
+					]
+				}
+			});
+		</script>
+
+	</body>
+</html>
