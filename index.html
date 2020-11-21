@@ -86,7 +86,7 @@
 					sortedColBy: ''
 				},
 				created:function() {
-					fetch('http://lab454903704-env.eba-rz9de2wz.us-east-1.elasticbeanstalk.com/api/movies')
+					fetch('https://lab454903704-env.eba-rz9de2wz.us-east-1.elasticbeanstalk.com/api/movies')
 					.then(response => response.json())
 					.then (json => {
 						this.rows = json.movieList;
